@@ -1,0 +1,33 @@
+
+
+
+  </div> <!-- articleBandContent -->
+</div> <!-- pageContent -->
+
+<div id="rStudioFooter" class="band full">
+<div class="bandContent">
+  <div id="copyright">&copy; Copyright <span id="footer-year">2018</span> Keetro Foundation</div>
+  <div id="logos">
+  </div>
+</div>
+</div>
+<script>
+    document.getElementById("footer-year").innerHTML = new Date().getFullYear();
+
+</script>
+<script type='text/javascript'>
+
+    function ScrollToPos(target,act){
+
+          if(target == "#"){
+
+             $('html,body').animate({ scrollTop: 0 }, 1000);
+
+            }else{
+
+             $('html,body').animate({ scrollTop: $(target).offset().top }, 1000);
+
+          }
+
+         }
+</script>

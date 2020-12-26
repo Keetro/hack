@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+<meta name="date" content="2018-09-21" />
+
+<title>Keetro.org</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<meta name="description" content="Keetro.org" />
+<link rel="apple-touch-icon" sizes="57x57" href="/images/favicon/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/images/favicon/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/images/favicon/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/images/favicon/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/images/favicon/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/images/favicon/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/images/favicon/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/images/favicon/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/images/favicon/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" type="image/png" href="favicon.ico" />
+
+<script type="text/javascript" src="js/rmarkdown.js"></script>
+
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="css/rmarkdown.css" type="text/css" />
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+  padding-left: 25px;
+  text-indent: 0;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-inverse  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Keetro.org</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="https://github.com/Keetro/thedata.report/issues">Project Tracking</a>
+</li>
+<li>
+  <a href="/product.html">Product Vision</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+  <!--<li>
+  <a href="">
+    <span class="fa fa-medium fa-lg"></span>
+  </a>
+</li>-->
+  <li>
+  <a href="https://github.com/keetro">
+    <span class="fa fa-github fa-lg"></span>
+  </a>
+</li>
+<!--<li>
+  <a href="">
+    <span class="fa fa-twitter fa-lg"></span>
+  </a>
+</li>-->
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div>
+
+<style type="text/css">
+#TOC {
+  margin-left: 35px;
+  margin-top: 90px;
+}
+</style>
+
+<script type="text/javascript">
+$(".main-container").removeClass("main-container").removeClass("container-fluid").addClass("footerPushDown");
+</script>
+
+
+<div id="pageContent" class="standardPadding">
+  <div class="articleBandContent">
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Keetro.org</h1>
+<h4 class="date"><em>09/21/2018</em></h4>
+
+</div>
+
+
+<blockquote>
+<p>A community-run social publishing platform for techies maintained by Keetro Foundation</p>
+</blockquote>
+<div id="mission" class="section level1">
+<h1>Mission</h1>
+<p>To help problem solvers be recognized as subject matter experts through creative use of media and publishing applications while delivering knowledge and answers to non-member participants in a most effective way</p>
+</div>
+<div id="suggested-communities" class="section level1">
+<h1>Suggested Communities</h1>
+<ul>
+<li><em>Original and curated articles on Data Analytics/Science/Engineering and AI authored by practitioners</em> (e.g. community #1)</li>
+<li><a href="https://github.com/Keetro/keetro.org-main-website/issues">Suggestions…</a></li>
+</ul>
+</div>
+<div id="why" class="section level1">
+<h1>Why?</h1>
+<div id="tldr" class="section level3">
+<h3>TL;DR</h3>
+<p><strong>Social Media</strong> platforms are great for promotion, but what happens when they change algorithms and suddenly your long article on Machine Learning ends up right after Elon Musk’s new Tesla release video and right before someone’s discussion of Trump’s politics. Who really owns your followers and your audience at that point?</p>
+</div>
+<div id="longer-version" class="section level3">
+<h3>Longer version:</h3>
+<p>At one point the internet was simple. You put up a website or host your own CMS (e.g. Wordpress) and with a bit of effort, you are able to get traffic and readers. Today the internet is much more complex. You can host your own website or a CMS, but your readership will still heavily depend on common distribution channels: Medium.com, Facebook, HN, Reddit, Quora, Stackoverflow, Google, etc. Each of these platforms is trying to optimize for the masses (journalists, PR people, sales people) as well as advertisers. The problem with that is this: experts that previously could get traffic on Quora or Medium are frequently disincentivized from contributing any further:</p>
+<ol style="list-style-type: decimal">
+<li>their voices are no longer as valuable (i.e. it is hard to compete with TV stars in a popularity contest)</li>
+<li>algorithms devalue quality technical content/ideas in favor of “X”, “Y”, or “Z” through meaningless context placement or outright neglect</li>
+<li>social likes/thumbs up don’t lead to actual business</li>
+</ol>
+<p>The goal of this foundation is to bring the power of initial internet experience back to subject matter experts. The end result should be like hosting your own customized CMS with a lot less effort (we all maintain it for our collective benefit) and with much more impact (it is social).</p>
+</div>
+</div>
+<div id="resources" class="section level1">
+<h1>Resources</h1>
+<p>At our disposal are socially-focused sites that we will operate for our own needs. Each site is a use-case oriented CMS. We are free to pick/choose any open-source CMS and modify it for our needs. We can also build our own CMS if we see that there is an added benefit. As we modify the source code, each of us will likely want to make changes to put ourselves into an advantageous position. That is OK! As long as we collectively make only changes that increase promotional power of each individual member (e.g Prefer SUM(MAX(Fi(x))) over MAX(SUM(Fi(x))) - translation: OK to compromise on the popularity of the platform in favor of maximum returns for each of the individual members).</p>
+</div>
+<div id="structure" class="section level1">
+<h1>Structure</h1>
+<p>We will operate this foundation as an open source non-profit, with members having levels of ownership based on meaningful participation. Initially proposed levels are:</p>
+<ul>
+<li><strong>Sudo member</strong> - admin priveleges to all resources</li>
+<li><strong>Partner</strong> - has admin priveleges to make changes in the underlying social media sites that exist within github.com/keetro org.</li>
+<li><strong>Organizer</strong> - moderates content, merges articles, contributes original content</li>
+<li><strong>Expert</strong> - can contribute articles and posts, but has no priveleges to modify the underlying code to any of the social platforms (i.e. a writer or contributor on other sites)</li>
+<li><strong>Audience</strong> - these are people who we listen to for feedback about the end display of content</li>
+</ul>
+</div>
+<div id="examples" class="section level1">
+<h1>Examples</h1>
+<ol style="list-style-type: decimal">
+<li><p>You just completed work on a project. You want to write it up somewhere because there were a lot of useful takeways <strong>and</strong> you think it might generate more demand for your services. Where do you post it?</p></li>
+<li><p>You’ve spent a significant time researching a particular subject for this one assignment, and now you have all these notes with references to various blogs, articles, and documentation - where do you post it?</p></li>
+<li><p>You just recorded a video/audio interview of a thought leader within your industry. Based on just the title, it is not easily indexed/searchable content. You would like it to generate demand for you. Where do you post it?</p></li>
+</ol>
+</div>
+<div id="qa" class="section level1">
+<h1>Q&amp;A</h1>
+<div id="is-this-like-stackoverflow" class="section level2">
+<h2>Is this like Stackoverflow?</h2>
+<p>No. First, Stackoverflow is closed-source and is run by an organization. But more importantly, each of the communities is focused on promoting best-voted answers–not the authors of those answers. The platform’s incentives lie far apart from the incentives of someone who is authoring quality content to promote themselves as a subject-matter expert. Stackoverflow is a great platform for developer evangelists that are trying to promote a technology. It is <strong>not</strong> good if you are trying to promote your non-developer focused product, expertize or company. And it is not a CMS.</p>
+</div>
+<div id="quora-or-medium.com" class="section level2">
+<h2>.. Quora or Medium.com?</h2>
+<p>No. If you are in sales or you are famous, Quora is great. If you are a journalist, Medium.com is great too. As far as tech, Quora is tailored to Sales/Marketing (SDR) people because of its question-driven business focus. If you are focusing on doing quality work, you simply don’t have the time to monitor latest questions in order to promote your expertize. Medium is similarly not tailored to experts. Yes, you can contribute your articles to a publication and the article will survive for a short time in the newsfeed, but it is <strong>not</strong> surfaced to your potential audence based on quality of research or content unless it is found through SEO (unlikely in this day and age).</p>
+</div>
+<div id="wordpress.org-ghost.org" class="section level2">
+<h2>.. Wordpress.org, Ghost.org?</h2>
+<p>No. These are CMS technologies - not social platforms with an audience in mind. As a community, we can rely on these if we want to build a new social community, but we should not confuse the technology with its application.</p>
+<p>- <a href="https://github.com/segahm">Segah A. Mir</a><br/><br/></p>
+</div>
+</div>
+
+
+
+
+  </div> <!-- articleBandContent -->
+</div> <!-- pageContent -->
+
+<div id="rStudioFooter" class="band full">
+<div class="bandContent">
+  <div id="copyright">&copy; Copyright <span id="footer-year">2018</span> Keetro Foundation</div>
+  <div id="logos">
+  </div>
+</div>
+</div>
+<script>
+    document.getElementById("footer-year").innerHTML = new Date().getFullYear();
+
+</script>
+<script type='text/javascript'>
+
+    function ScrollToPos(target,act){
+
+          if(target == "#"){
+
+             $('html,body').animate({ scrollTop: 0 }, 1000);
+
+            }else{
+
+             $('html,body').animate({ scrollTop: $(target).offset().top }, 1000);
+
+          }
+
+         }
+</script>
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+
+</body>
+</html>

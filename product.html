@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+<meta name="date" content="2019-02-13" />
+
+<title>Product Vision</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/cosmo.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<meta name="description" content="Keetro.org" />
+<link rel="apple-touch-icon" sizes="57x57" href="/images/favicon/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/images/favicon/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/images/favicon/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/images/favicon/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/images/favicon/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/images/favicon/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/images/favicon/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/images/favicon/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="/images/favicon/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/images/favicon/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/images/favicon/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<link rel="icon" type="image/png" href="favicon.ico" />
+
+<script type="text/javascript" src="js/rmarkdown.js"></script>
+
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="css/rmarkdown.css" type="text/css" />
+
+</head>
+
+<body>
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
+
+
+
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+  padding-left: 25px;
+  text-indent: 0;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-inverse  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/">Keetro.org</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="https://github.com/Keetro/thedata.report/issues">Project Tracking</a>
+</li>
+<li>
+  <a href="/product.html">Product Vision</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+  <!--<li>
+  <a href="">
+    <span class="fa fa-medium fa-lg"></span>
+  </a>
+</li>-->
+  <li>
+  <a href="https://github.com/keetro">
+    <span class="fa fa-github fa-lg"></span>
+  </a>
+</li>
+<!--<li>
+  <a href="">
+    <span class="fa fa-twitter fa-lg"></span>
+  </a>
+</li>-->
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div>
+
+<style type="text/css">
+#TOC {
+  margin-left: 35px;
+  margin-top: 90px;
+}
+</style>
+
+<script type="text/javascript">
+$(".main-container").removeClass("main-container").removeClass("container-fluid").addClass("footerPushDown");
+</script>
+
+
+<div id="pageContent" class="standardPadding">
+  <div class="articleBandContent">
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Product Vision</h1>
+<h4 class="date"><em>02/13/2019</em></h4>
+
+</div>
+
+
+<p>The Keetro platform/product–not to be confused with communities/projects built on top of this platform–is a set of open-sourced and openly-governed:</p>
+<ol style="list-style-type: decimal">
+<li>foundation-wide technologies,</li>
+<li>member databases/services,</li>
+<li>specific community implementations,</li>
+</ol>
+<div id="problem" class="section level2">
+<h2>Problem</h2>
+<p>Publisher</p>
+<p>Say I want to start my own community today, and adjust the interaction/UI experience based on what I believe that community needs the most. I need to customize existing software, grow membership, and maybe even generate my own content (if I want to be a contributor).</p>
+<p>That is a lot! Which is why most non-corporate influencers today, prefer to use generic platforms (Twitter, Stackoverflow, Quora, Medium) and give away their audiences in return. Only well-funded companies build their own personalized communities and retain ownership of their audiences.</p>
+<blockquote>
+<p>Sidenote: This is not a new concept. Blogs had this feature: 1) customize wordpress, 2) add RSS feeds, 3) enable pingbacks -&gt; voila! You used to own your audience and you could leverage all the social graphs implicit in the blogosphere.</p>
+</blockquote>
+<p>Audience</p>
+<p>I constantly search for information. Some of it is specific in nature: a question, requiring a specific answer. But other types of questions are less ambigious - i.e. I am not even sure how to ask the question.</p>
+<p>In the former case, we have a lot of solutions on the web: Quora - for software, Stackoverflow - for technical questions, Google - for everything else.</p>
+<p>In the later case, however, it is not enough to find a specific answer. What I am looking for is expertize. Expertize that is clearly demonstrated through the clever use of content (e.g. blogs, video, etc) or just repeat use of niche-tailored communities. What I am looking for is a niche community, focused around Topic “A”, where the contributor is easily identifiable and promoted.</p>
+</div>
+<div id="solution" class="section level2">
+<h2>Solution</h2>
+<p>First, some analogies:</p>
+<blockquote>
+<p>Wikimedia is a great platform for custom wikis.</p>
+</blockquote>
+<blockquote>
+<p>Stackoverflow is a great platform for other stack-based communities.</p>
+</blockquote>
+<p>What if <strong>Keetro</strong> could be a platform for other social publishing communities: <code>F(publishing community x)</code>?</p>
+<p>Components:</p>
+<p><strong>Hosting:</strong> - Serverless? Either way, it needs to be fully transparent to the publisher. Backend hosting tends to hide algorithms and other preferential choices that publishers might not agree with (when was the last time twitter/stackoverflow/medium shared with its top influencers in detail how they rank content)?</p>
+<p><strong>Aggregation:</strong> - Sum of Max(Fi(x)) over Max(Sum of Fi(x)) - must maximize the outcomes for existing members over the success of the platform as a whole. This might mean, for example, that rather than scaling an existing community, we launch a new one with its own custom algorithms</p>
+<p><strong>Feedback:</strong> - Custom to each community. Some communities might like comments, others likes/dislikes, etc.</p>
+<p><strong>Discovery:</strong> - Need to plan for a much richer set of discovery mechanisms than what is available today, going beyond tags and text search. Authors/contributors are able to provide much richer meta information, so each community should create custom workflow for this meta information. For example, when community’s audience are executives, good meta data will have company size and vertical. When a community is tailored to software engineers, good meta data will have platform and stack information. Meta descriptions were key during original SEO, but were quickly gamed by spammers and, as a result, ignored by Google. We will need to devise editing rules for this meta data, so that what happened for the web, does not happen for Keetro.</p>
+<p><strong>Streaming:</strong> - Not every community needs this and we should be careful to assume that it does. But, of course, some do, and we will need to devise custom algorithms for each community.</p>
+</div>
+
+
+
+
+  </div> <!-- articleBandContent -->
+</div> <!-- pageContent -->
+
+<div id="rStudioFooter" class="band full">
+<div class="bandContent">
+  <div id="copyright">&copy; Copyright <span id="footer-year">2018</span> Keetro Foundation</div>
+  <div id="logos">
+  </div>
+</div>
+</div>
+<script>
+    document.getElementById("footer-year").innerHTML = new Date().getFullYear();
+
+</script>
+<script type='text/javascript'>
+
+    function ScrollToPos(target,act){
+
+          if(target == "#"){
+
+             $('html,body').animate({ scrollTop: 0 }, 1000);
+
+            }else{
+
+             $('html,body').animate({ scrollTop: $(target).offset().top }, 1000);
+
+          }
+
+         }
+</script>
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+
+</body>
+</html>

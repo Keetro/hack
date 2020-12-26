@@ -1,0 +1,59 @@
+---
+title: "Product Vision"
+date: "02/13/2019"
+output:
+  html_document:
+    highlight: tango
+    toc: true
+    toc_float:
+      collapsed: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+The Keetro platform/product--not to be confused with communities/projects built on top of this platform--is a set of open-sourced and openly-governed:
+
+1) foundation-wide technologies, 
+2) member databases/services, 
+3) specific community implementations,
+
+## Problem
+
+Publisher
+
+Say I want to start my own community today, and adjust the interaction/UI experience based on what I believe that community needs the most. I need to customize existing software, grow membership, and maybe even generate my own content (if I want to be a contributor).
+
+That is a lot! Which is why most non-corporate influencers today, prefer to use generic platforms (Twitter, Stackoverflow, Quora, Medium) and give away their audiences in return. Only well-funded companies build their own personalized communities and retain ownership of their audiences.
+
+> Sidenote: This is not a new concept. Blogs had this feature: 1) customize wordpress, 2) add RSS feeds, 3) enable pingbacks -> voila! You used to own your audience and you could leverage all the social graphs implicit in the blogosphere.
+
+Audience
+
+I constantly search for information. Some of it is specific in nature: a question, requiring a specific answer. But other types of questions are less ambigious - i.e. I am not even sure how to ask the question. 
+
+In the former case, we have a lot of solutions on the web: Quora - for software, Stackoverflow - for technical questions, Google - for everything else.
+
+In the later case, however, it is not enough to find a specific answer. What I am looking for is expertize. Expertize that is clearly demonstrated through the clever use of content (e.g. blogs, video, etc) or just repeat use of niche-tailored communities. What I am looking for is a niche community, focused around Topic "A", where the contributor is easily identifiable and promoted.
+
+## Solution
+
+First, some analogies:
+
+> Wikimedia is a great platform for custom wikis.
+
+> Stackoverflow is a great platform for other stack-based communities. 
+
+What if **Keetro** could be a platform for other social publishing communities: ```F(publishing community x)```?
+
+Components:
+
+**Hosting:** - Serverless? Either way, it needs to be fully transparent to the publisher. Backend hosting tends to hide algorithms and other preferential choices that publishers might not agree with (when was the last time twitter/stackoverflow/medium shared with its top influencers in detail how they rank content)?
+
+**Aggregation:** - Sum of Max(Fi(x)) over Max(Sum of Fi(x)) - must maximize the outcomes for existing members over the success of the platform as a whole. This might mean, for example, that rather than scaling an existing community, we launch a new one with its own custom algorithms
+
+**Feedback:** - Custom to each community. Some communities might like comments, others likes/dislikes, etc.
+
+**Discovery:** - Need to plan for a much richer set of discovery mechanisms than what is available today, going beyond tags and text search. Authors/contributors are able to provide much richer meta information, so each community should create custom workflow for this meta information. For example, when community's audience are executives, good meta data will have company size and vertical. When a community is tailored to software engineers, good meta data will have platform and stack information. Meta descriptions were key during original SEO, but were quickly gamed by spammers and, as a result, ignored by Google. We will need to devise editing rules for this meta data, so that what happened for the web, does not happen for Keetro.
+
+**Streaming:** - Not every community needs this and we should be careful to assume that it does. But, of course, some do, and we will need to devise custom algorithms for each community.
